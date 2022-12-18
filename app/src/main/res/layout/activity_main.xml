@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/logo"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:src="@drawable/img"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/plusBtn2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_baseline_add_circle_outline_24"
+            app:layout_constraintBottom_toBottomOf="@+id/likesBtn3"
+            app:layout_constraintEnd_toStartOf="@+id/likesBtn3"
+            app:layout_constraintTop_toTopOf="@+id/likesBtn3"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/likesBtn3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_baseline_favorite_border_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <HorizontalScrollView
+        android:id="@+id/storyBar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        tools:layout_editor_absoluteX="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toTopOf="@id/content"
+            app:layout_constraintTop_toBottomOf="@id/topBar"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/firstPerson"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_baseline_account_circle_24"
+                app:layout_constraintEnd_toStartOf="@id/secondPerson"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/secondPerson"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_baseline_account_circle_24"
+                app:layout_constraintEnd_toStartOf="@+id/thirdPerson"
+                app:layout_constraintStart_toEndOf="@id/firstPerson"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/thirdPerson"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_baseline_account_circle_24"
+                app:layout_constraintEnd_toStartOf="@+id/fourthPerson"
+                app:layout_constraintStart_toEndOf="@id/secondPerson"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/fourthPerson"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_baseline_account_circle_24"
+                app:layout_constraintEnd_toStartOf="@+id/fifthPerson"
+                app:layout_constraintStart_toEndOf="@id/thirdPerson"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/fifthPerson"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_baseline_account_circle_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/fourthPerson"
+                tools:ignore="MissingConstraints" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </HorizontalScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomBar"
+        app:layout_constraintTop_toBottomOf="@id/storyBar"
+        tools:layout_editor_absoluteX="0dp"
+        android:background="@color/black">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/number_likes"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="좋아요 100개"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/commentBar" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/friend_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="zikmo_anim   메롱"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/number_likes" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/profilePhoto"
+                app:layout_constraintBottom_toTopOf="@id/photo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:src="@drawable/ic_baseline_account_circle_24"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/userId"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                app:layout_constraintStart_toEndOf="@id/profilePhoto"
+                android:layout_marginStart="16dp"
+                android:textColor="@color/white"
+                android:gravity="center_vertical"
+                app:layout_constraintBottom_toTopOf="@id/photo"
+                android:text="인스타 아이디" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/vert_dot"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_baseline_more_vert_24"
+                app:layout_constraintBottom_toTopOf="@id/photo"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/photo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toTopOf="@id/commentBar"
+                android:src="@drawable/ic_baseline_favorite_border_24"
+                android:adjustViewBounds="true" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/commentBar"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintTop_toBottomOf="@id/photo">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/likes"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_baseline_favorite_border_24"
+                    app:layout_constraintEnd_toStartOf="@+id/comment"
+                    android:layout_marginEnd="16dp"
+                    tools:ignore="MissingConstraints" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/comment"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_baseline_mode_comment_24"
+                    app:layout_constraintEnd_toStartOf="@id/dm"
+                    tools:ignore="MissingConstraints" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/dm"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_baseline_near_me_24"
+                    app:layout_constraintStart_toEndOf="@id/comment"
+                    android:layout_marginStart="16dp"
+                    tools:ignore="MissingConstraints" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/photo_number"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_baseline_more_horiz_24"
+                    app:layout_constraintStart_toEndOf="@id/dm"
+                    android:layout_marginStart="50dp"
+                    tools:ignore="MissingConstraints" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/store"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_baseline_turned_in_not_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="16dp"
+                    tools:ignore="MissingConstraints" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/black"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/firstBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/secondBtn"
+            android:src="@drawable/ic_baseline_home_24"
+            android:layout_marginStart="16dp"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/secondBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/firstBtn"
+            app:layout_constraintEnd_toStartOf="@+id/thirdBtn"
+            android:src="@drawable/ic_baseline_near_me_24" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/thirdBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/secondBtn"
+            app:layout_constraintEnd_toStartOf="@+id/fourthBtn"
+            android:src="@drawable/ic_baseline_slow_motion_video_24" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/fourthBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/thirdBtn"
+            app:layout_constraintEnd_toStartOf="@+id/fifthBtn"
+            android:src="@drawable/ic_baseline_search_24" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/fifthBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/fourthBtn"
+            android:src="@drawable/ic_baseline_account_circle_24"
+            android:layout_marginEnd="16dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
